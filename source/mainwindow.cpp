@@ -13,3 +13,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_drawButton_clicked()
+{
+    // добавляй сюда свою функцию
+    ui->widget->drawVector(
+                std::vector<std::vector<unsigned int>>
+                (100, std::vector<unsigned int>(100, 100)));
+}
