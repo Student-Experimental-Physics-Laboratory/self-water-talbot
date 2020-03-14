@@ -12,14 +12,15 @@ using namespace std;
 
 TalbotMatrix::TalbotMatrix()
 {
-    this->width = DEFAULT_WIDTH;
-    this->height = DEFAULT_HEIGHT;
+    this->width		= DEFAULT_WIDTH;
+    this->height	= DEFAULT_HEIGHT;
 	this->generated = false;
 }
 
-TalbotMatrix::TalbotMatrix(unsigned int _width, unsigned int _height):TalbotMatrix()
+TalbotMatrix::TalbotMatrix(unsigned int _width, unsigned int _height)
+: TalbotMatrix()
 {
-    this->width = _width;
+    this->width	 = _width;
     this->height = _height;
 	this->generateMatrix();
 }
@@ -30,12 +31,12 @@ vector<pair<unsigned int, unsigned int>> TalbotMatrix::placeSources(void)
     if (this->sources_quantity > 0)
     {
         size_t placed = 0;
-        double step = this->height / (this->sources_quantity + 1);
+        double step	  = this->height / (this->sources_quantity + 1);
         for (double iteration = 0; iteration < this->height; iteration += step)
         {
             if (placed == this->sources_quantity)
                 break;
-            sources.push_back({0, iteration});
+            sources.push_back({ 0, iteration });
             placed++;
         }
     }
@@ -44,7 +45,7 @@ vector<pair<unsigned int, unsigned int>> TalbotMatrix::placeSources(void)
 
 float TalbotMatrix::amplitudeFunction(int x, int y, size_t time)
 {
-    float distance = sqrt(pow(x, 2) + pow(y, 2)) + time;
+    float distance		 = sqrt(pow(x, 2) + pow(y, 2)) + time;
     float function_value = this->max_amplitude * pow((sin(distance) + 1) / 2, this->wave_slope);
     return function_value;
 }
@@ -56,10 +57,17 @@ void TalbotMatrix::generateMatrix()
 
     auto sources = this->placeSources();
 
-    unsigned int wave_distance = max(this->height, this->width); //Дистанция, на которую волна распространяется
+    unsigned int wave_distance
+        = max(this->height, this->width);  //Дистанция, на которую волна распространяется
 
-    for (auto &i : sources)
+    for (auto& i : sources)
     {
-        for (int i = )
+        for (int i = 0 - wave_distance; i < this->height + wave_distance; i++)
+        {
+            for (int j = 0; j < this->width; i++)
+            {
+                auto current_amplitude = this->amplitudeFunction()
+            }
+        }
     }
 }

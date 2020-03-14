@@ -23,7 +23,7 @@ SOURCES += \
 
 HEADERS += \
     mainwindow.h \
-    talbotmatrix.h
+    talbotmatrix.h \
     draw2dvector.h
 
 FORMS += \
