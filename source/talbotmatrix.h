@@ -46,7 +46,7 @@ private:
     vector<pair<unsigned int, unsigned int>> placeSources(void);
 
     // Функция рассчёта амплитуды волны
-    int amplitudeFunction(int x, int y, int time);
+    int amplitudeFunction(int x, int y);
 
 	// генерирует необходимую матрицу и сохраняет результат в matrix (без аргументов)
 	// присваивает generated true;
