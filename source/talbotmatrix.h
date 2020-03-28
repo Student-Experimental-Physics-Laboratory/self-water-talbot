@@ -3,24 +3,25 @@
 
 #include <vector>
 #include <QPixmap>
+#include <map>
 
 using namespace std;
 
 class TalbotMatrix : public QPixmap
 {
 private:
-	vector<vector<unsigned short>> matrix;
+    vector<vector<unsigned int>> matrix;
 
-	bool generated;
-	unsigned int width;
-	unsigned int height;
+    bool generated;
+    int	 width;
+    int	 height;
 	// остальные параметры ковра (прокомментировать)
 
 	// Количество источников
-	unsigned int sources_quantity;
+    int sources_quantity;
 
     // Амплитуда колебаний источника
-    int max_amplitude;
+    double max_amplitude;
 
 	// Фаза волны
 	double phase;
@@ -31,6 +32,11 @@ private:
     // Крутость волны (крутость откоса)
     double wave_slope;
 
+    // Отражения
+    bool is_reflectible;
+
+    double viscosity;
+
 	// ****************************************
 	// переменные всякие дополнительные
     // функции всякие дополнительные
@@ -40,23 +46,31 @@ private:
     vector<pair<unsigned int, unsigned int>> placeSources(void);
 
     // Функция рассчёта амплитуды волны
-    float amplitudeFunction(int x, int y, size_t time);
+    int amplitudeFunction(int x, int y, int time);
 
 	// генерирует необходимую матрицу и сохраняет результат в matrix (без аргументов)
 	// присваивает generated true;
-	void generateMatrix(void);
+    void generateMatrix(void);
+
+    double countAmplitude(void);
 
 public:
 	TalbotMatrix();
-	TalbotMatrix(unsigned int _width, unsigned int _height); // добавь в аргументы остальные параметры ковра
+    TalbotMatrix(int _width,
+                 int _height);	// добавь в аргументы остальные параметры ковра
 
-	void updateParams(void); // добавь в аргументы остальные параметры ковра
-	void updateSize(unsigned int _width, unsigned int _height); // обновляет размер окна
-	void updateSources(unsigned int sources_quantity); //
+    void updateParams(double _phase,
+                      double _wave_len,
+                      double _wave_slope,
+                      double _viscosity);	// добавь в аргументы остальные параметры ковра
+    void updateSize(int _width, int _height);	 // обновляет размер окна
+    void updateSources(int _sources_quantity,
+                       bool _is_reflectible);			 //
 
-	vector<vector<unsigned short> > getMatrix(); // генерирует картинку с помощью generateMatrix и возвращает матрицу
+    vector<vector<unsigned int>>
+    getMatrix();  // генерирует картинку с помощью generateMatrix и возвращает матрицу
 
 	~TalbotMatrix();
 };
 
-#endif // TALBOTMATRIX_H
+#endif	// TALBOTMATRIX_H
