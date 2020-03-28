@@ -9,8 +9,7 @@ class DrawChart : public QWidget
 public:
     explicit DrawChart(QWidget *parent = nullptr);
 
-signals:
-
+    void paintEvent(QPaintEvent *event) override;
 };
 
 #endif // DRAWCHART_H
