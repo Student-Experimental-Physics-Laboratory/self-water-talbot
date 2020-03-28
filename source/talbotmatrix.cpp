@@ -75,7 +75,7 @@ vector<pair<unsigned int, unsigned int>> TalbotMatrix::placeSources(void)
     return sources;
 }
 
-int TalbotMatrix::amplitudeFunction(int d_x, int d_y, int time)
+int TalbotMatrix::amplitudeFunction(int d_x, int d_y)
 {
     double distance		  = sqrt(pow(d_x, 2) + pow(d_y, 2)) + phase;
     int	   function_value = (int) (this->max_amplitude * pow((sin(distance / this->wave_len) + 1) / 2, this->wave_slope)) * exp(-distance * this->viscosity / 1000);
