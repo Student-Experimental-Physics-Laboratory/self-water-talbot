@@ -8,6 +8,7 @@
 
 Draw2DVector::Draw2DVector(QWidget *parent) : QWidget(parent)
 {
+
 }
 
 void Draw2DVector::setVector(std::vector<std::vector<unsigned int> > vec)
@@ -20,6 +21,12 @@ void Draw2DVector::setVector(std::vector<std::vector<unsigned int> > vec)
         throw std::invalid_argument("Column count is too big");
 
     points = vec;
+}
+
+void Draw2DVector::mousePressEvent(QMouseEvent *event)
+{
+    this->graphicX = event->x();
+    this->update();
 }
 
 void Draw2DVector::drawVector(std::vector<std::vector<unsigned int> > vec)
@@ -41,6 +48,10 @@ void Draw2DVector::paintEvent(QPaintEvent *event)
             {
                 im.setPixel(i, j, GRAYTORGB(points[i][j]));
             }
+        for (int i = 0; i < c; i++)
+        {
+            im.setPixel(this->graphicX, i, 255 << 16);
+        }
         p.drawImage(0, 0, im);
     }
 }
