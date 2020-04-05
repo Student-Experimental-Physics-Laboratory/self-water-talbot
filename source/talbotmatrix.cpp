@@ -111,7 +111,7 @@ void TalbotMatrix::generateMatrix()
             for (int j = 0; j < (int) this->width; j++)
             {
                 int current_amplitude
-                    = this->amplitudeFunction(source.first - j, source.second - i, 0);
+                    = this->amplitudeFunction(source.first - j, source.second - i);
                 int i_modified = i;
                 if (i == (int) this->height)
                 {
