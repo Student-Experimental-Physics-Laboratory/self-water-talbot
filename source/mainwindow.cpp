@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "talbotmatrix.h"
 
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
