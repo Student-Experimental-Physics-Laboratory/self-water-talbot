@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>651</width>
-      <height>581</height>
+      <width>671</width>
+      <height>601</height>
      </rect>
     </property>
    </widget>
@@ -179,10 +179,10 @@
    <widget class="DrawChart" name="chartWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>700</x>
       <y>10</y>
-      <width>241</width>
-      <height>581</height>
+      <width>211</width>
+      <height>601</height>
      </rect>
     </property>
    </widget>

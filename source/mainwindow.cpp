@@ -16,6 +16,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_drawButton_clicked()
 {
+//    пример использования
+//    vector<double> newX(100), newY(100);
+//    for (size_t i = 0; i < newX.size(); ++i)
+//        newX[i] = i;
+//    for (size_t i = 0; i < newY.size(); ++i)
+//        newY[i] = i * i;
+//    ui->chartWidget->updateDots(newX, newY);
+    ui->chartWidget->paintEvent();
+
     int sources = this->ui->sources_input->value();
     double phase = this->ui->phase_input->value();
     double wave_len = this->ui->wavelen_input->value();
