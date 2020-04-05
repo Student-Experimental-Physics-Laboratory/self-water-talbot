@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>891</width>
-      <height>581</height>
+      <width>671</width>
+      <height>601</height>
      </rect>
     </property>
    </widget>
@@ -52,12 +52,12 @@
     <property name="title">
      <string>Параметры</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>241</width>
+       <width>245</width>
        <height>171</height>
       </rect>
      </property>
@@ -176,6 +176,16 @@
      <string>Отражение волн от бортиков</string>
     </property>
    </widget>
+   <widget class="DrawChart" name="chartWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>10</y>
+      <width>211</width>
+      <height>601</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -183,7 +193,7 @@
      <x>0</x>
      <y>0</y>
      <width>1194</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -194,6 +204,12 @@
    <class>Draw2DVector</class>
    <extends>QWidget</extends>
    <header>draw2dvector.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DrawChart</class>
+   <extends>QWidget</extends>
+   <header>drawchart.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
