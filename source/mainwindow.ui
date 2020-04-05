@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1194</width>
-    <height>658</height>
+    <width>1177</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="Draw2DVector" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>0</x>
+      <y>0</y>
       <width>671</width>
       <height>601</height>
      </rect>
@@ -27,8 +27,8 @@
    <widget class="QPushButton" name="drawButton">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>560</y>
+      <x>900</x>
+      <y>430</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -43,8 +43,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>350</y>
+      <x>900</x>
+      <y>220</y>
       <width>261</width>
       <height>201</height>
      </rect>
@@ -166,8 +166,8 @@
    <widget class="QCheckBox" name="is_reflectible_input">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>320</y>
+      <x>910</x>
+      <y>190</y>
       <width>241</width>
       <height>20</height>
      </rect>
@@ -179,11 +179,24 @@
    <widget class="DrawChart" name="chartWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>10</y>
+      <x>680</x>
+      <y>-30</y>
       <width>211</width>
-      <height>601</height>
+      <height>661</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reportButton">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>490</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сгенерировать отчёт</string>
     </property>
    </widget>
   </widget>
@@ -192,8 +205,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1194</width>
-     <height>22</height>
+     <width>1177</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
