@@ -7,6 +7,8 @@
 #include <vector>
 #include <exception>
 #include <string>
+#include <QMouseEvent>
+#include <QMainWindow>
 
 class Draw2DVector : public QWidget
 {
@@ -14,7 +16,9 @@ class Draw2DVector : public QWidget
 public:
     explicit Draw2DVector(QWidget *parent = nullptr);
     void setVector(std::vector<std::vector<unsigned int> > vec);
+    void mousePressEvent(QMouseEvent * event) override;
     void drawVector(std::vector<std::vector<unsigned int> > vec);
+    int graphicX;
 private:
     void paintEvent(QPaintEvent *event) override;
     std::vector<std::vector<unsigned int> > points;
