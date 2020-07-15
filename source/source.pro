@@ -20,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     drawchart.cpp \
+    imagedrawer.cpp \
     imagewidget.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 
 HEADERS += \
     drawchart.h \
+    imagedrawer.h \
     imagewidget.h \
     mainwindow.h \
     talbotmatrix.h

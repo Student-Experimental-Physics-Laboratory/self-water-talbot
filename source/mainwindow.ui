@@ -20,30 +20,42 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <property name="opaqueResize">
-       <bool>true</bool>
-      </property>
-      <property name="handleWidth">
-       <number>0</number>
-      </property>
-      <property name="childrenCollapsible">
-       <bool>false</bool>
-      </property>
-      <widget class="ImageWidget" name="talbotImage" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
+      <widget class="QWidget" name="">
+       <layout class="QVBoxLayout" name="talbot">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QWidget" name="vruler" native="true"/>
+          </item>
+          <item>
+           <widget class="TalbotImageWidget" name="talbotImage" native="true"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="hruler" native="true"/>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="talbotChart" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
+      <widget class="QWidget" name="">
+       <layout class="QVBoxLayout" name="chart">
+        <item>
+         <widget class="QWidget" name="cinfo" native="true"/>
+        </item>
+        <item>
+         <widget class="QWidget" name="talbotChart" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="cruler" native="true"/>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="controller" stretch="0,0">
@@ -251,7 +263,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ImageWidget</class>
+   <class>TalbotImageWidget</class>
    <extends>QWidget</extends>
    <header>imagewidget.h</header>
    <container>1</container>
