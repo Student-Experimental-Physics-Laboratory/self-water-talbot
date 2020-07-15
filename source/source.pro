@@ -18,7 +18,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    draw2dvector.cpp \
     drawchart.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -27,8 +26,7 @@ SOURCES += \
 HEADERS += \
     drawchart.h \
     mainwindow.h \
-    talbotmatrix.h \
-    draw2dvector.h
+    talbotmatrix.h
 
 FORMS += \
     mainwindow.ui
