@@ -20,12 +20,25 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="talbot">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
-           <widget class="QWidget" name="vruler" native="true"/>
+           <widget class="QWidget" name="vruler" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>20</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="TalbotImageWidget" name="talbotImage" native="true"/>
@@ -33,14 +46,40 @@
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="hruler" native="true"/>
+         <widget class="QWidget" name="hruler" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="chart">
         <item>
-         <widget class="QWidget" name="cinfo" native="true"/>
+         <widget class="QWidget" name="cinfo" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QWidget" name="talbotChart" native="true">
@@ -53,12 +92,25 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="cruler" native="true"/>
+         <widget class="QWidget" name="cruler" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="layoutWidget">
-       <layout class="QVBoxLayout" name="controller" stretch="0,0">
+       <layout class="QVBoxLayout" name="controller" stretch="0,0,0">
         <property name="spacing">
          <number>0</number>
         </property>
@@ -69,8 +121,18 @@
          <widget class="QListWidget" name="experiments">
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>200</width>
             <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
            </size>
           </property>
          </widget>

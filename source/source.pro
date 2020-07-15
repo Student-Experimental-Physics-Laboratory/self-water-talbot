@@ -20,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     drawchart.cpp \
+    experiment.cpp \
     imagedrawer.cpp \
     imagewidget.cpp \
     main.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 
 HEADERS += \
     drawchart.h \
+    experiment.h \
     imagedrawer.h \
     imagewidget.h \
     mainwindow.h \
