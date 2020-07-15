@@ -16,9 +16,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_drawButton_clicked();
-
-    void on_reportButton_clicked();
 
 private:
     Ui::MainWindow *ui;

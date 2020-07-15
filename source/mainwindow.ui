@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>900</x>
@@ -161,21 +161,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QSplitter" name="splitter">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-40</y>
-      <width>0</width>
-      <height>0</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-    <widget class="DrawChart" name="chartWidget" native="true"/>
-    <widget class="Draw2DVector" name="widget" native="true"/>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -201,20 +186,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>Draw2DVector</class>
-   <extends>QWidget</extends>
-   <header>draw2dvector.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>DrawChart</class>
-   <extends>QWidget</extends>
-   <header>drawchart.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
