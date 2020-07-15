@@ -2,6 +2,8 @@
 #define IMAGEWIDGET_H
 
 #include <QWidget>
+#include <QPainter>
+#include <QImage>
 
 class ImageWidget : public QWidget
 {
@@ -9,8 +11,10 @@ class ImageWidget : public QWidget
 public:
     explicit ImageWidget(QWidget *parent = nullptr);
 
-signals:
-
+    void resizeEvent(QResizeEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
+private:
+    QImage image;
 };
 
 #endif // IMAGEWIDGET_H
