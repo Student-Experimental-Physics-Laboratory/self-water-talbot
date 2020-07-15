@@ -1,6 +1,8 @@
 #ifndef TALBOTMATRIX_H
 #define TALBOTMATRIX_H
 
+#include <QImage>
+
 #include <vector>
 
 double countAmplitude(int n_sources, bool reflectible);
@@ -40,10 +42,6 @@ class TalbotMatrix
 {
 private:
     std::vector<std::vector<unsigned int>> matrix;
-
-    bool generated;
-    int	 width;
-    int	 height;
     // остальные параметры ковра (прокомментировать)
 
     TalbotParams params;
@@ -54,24 +52,24 @@ private:
     // ****************************************
 
     // Функция размещения источников на генерируемой плоскости
-    std::vector<std::pair<unsigned int, unsigned int>> placeSources(void);
+    std::vector<std::pair<unsigned int, unsigned int>> placeSources(int width, int height);
 
     // Функция рассчёта амплитуды волны
     int amplitudeFunction(int x, int y);
 
     // генерирует необходимую матрицу и сохраняет результат в matrix (без аргументов)
     // присваивает generated true;
-    void generateMatrix(void);
+    void updateMatrix(int width, int height);
+
+    // генерирует картинку с помощью generateMatrix и возвращает матрицу
+    std::vector<std::vector<unsigned int>> getMatrix(int width, int height);
 
 public:
     TalbotMatrix();
-    TalbotMatrix(int _width,
-        int _height);	// добавь в аргументы остальные параметры ковра
 
     void updateParams(TalbotParams new_params);	// добавь в аргументы остальные параметры ковра
-    void updateSize(int _width, int _height);	 // обновляет размер окна
 
-    std::vector<std::vector<unsigned int>> getMatrix();  // генерирует картинку с помощью generateMatrix и возвращает матрицу
+    QImage drawTalbot(int width, int height);
 
     ~TalbotMatrix();
 };
