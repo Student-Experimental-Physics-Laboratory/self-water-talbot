@@ -1,4 +1,5 @@
-QT       += core gui charts
+QT       += core gui charts \
+    widgets
 
 greaterThan(QT_MAJOR_VERSION, 5.14.1): QT += widgets
 QT       += charts
@@ -18,17 +19,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    draw2dvector.cpp \
     drawchart.cpp \
+    imagewidget.cpp \
     main.cpp \
     mainwindow.cpp \
     talbotmatrix.cpp
 
 HEADERS += \
     drawchart.h \
+    imagewidget.h \
     mainwindow.h \
-    talbotmatrix.h \
-    draw2dvector.h
+    talbotmatrix.h
 
 FORMS += \
     mainwindow.ui

@@ -20,15 +20,48 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" name="talbotImage" native="true"/>
-      <widget class="QWidget" name="talbotChart" native="true"/>
+      <property name="opaqueResize">
+       <bool>true</bool>
+      </property>
+      <property name="handleWidth">
+       <number>0</number>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="talbotImage" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QWidget" name="talbotChart" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+      </widget>
       <widget class="QWidget" name="layoutWidget">
-       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0">
+       <layout class="QVBoxLayout" name="controller" stretch="0,0">
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
         <item>
-         <widget class="QListWidget" name="experiments"/>
+         <widget class="QListWidget" name="experiments">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -187,6 +220,7 @@
     <property name="title">
      <string>Вид</string>
     </property>
+    <addaction name="action_2"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -207,6 +241,11 @@
   <action name="action">
    <property name="text">
     <string>Сгенерировать отчет</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Ты че слепой</string>
    </property>
   </action>
  </widget>
