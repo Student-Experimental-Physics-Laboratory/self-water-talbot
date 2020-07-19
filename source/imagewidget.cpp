@@ -1,34 +1,33 @@
 #include "imagewidget.h"
 
-#include <iostream>
-
-using namespace std;
-
-TalbotImageWidget::TalbotImageWidget(QWidget *parent) : QWidget(parent)
+ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
 {
-    image = QImage(100, 100, QImage::Format_RGB32);
-    viewX = image.width() / 2;
+
 }
 
-void TalbotImageWidget::resizeEvent(QResizeEvent *)
+void ImageWidget::resizeImage(QImage *image, const QSize &newSize)
 {
-    image = QImage(width(), height(), QImage::Format_RGB32);
-    image.fill(qRgb(0, 0, 0));
-    update();
+    if (image->size() == newSize)
+        return;
+
+    QImage newImage(newSize, QImage::Format_RGB32);
+    newImage.fill(qRgb(0, 0, 0));
+    QPainter painter(&newImage);
+    painter.drawImage(QPoint(0, 0), *image);
+    *image = newImage;
 }
 
-void TalbotImageWidget::paintEvent(QPaintEvent *event)
+void ImageWidget::resizeEvent(QResizeEvent *event)
 {
+    int newWidth = width();
+    int newHeight = height();
+
+    resizeImage(&image, QSize(newWidth, newHeight));
+}
+
+void ImageWidget::paintEvent(QPaintEvent *event)
+{
+    QRect thisRect = rect();
     QPainter p(this);
-    QRect r(this->rect());
-    p.drawImage(r, image, r);
-    p.setPen(Qt::red);
-    p.drawLine(viewX, 0, viewX, height());
-}
-
-void TalbotImageWidget::mousePressEvent(QMouseEvent *event)
-{
-    setFocus();
-    viewX = event->pos().x();
-    repaint();
+    p.drawImage(thisRect, image, thisRect);
 }

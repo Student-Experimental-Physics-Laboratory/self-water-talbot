@@ -2,24 +2,24 @@
 #define IMAGEWIDGET_H
 
 #include <QWidget>
-#include <QPainter>
 #include <QImage>
-#include <QMouseEvent>
+#include <QPainter>
 
-class TalbotImageWidget : public QWidget
+class ImageWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TalbotImageWidget(QWidget *parent = nullptr);
+    explicit ImageWidget(QWidget *parent = nullptr);
 
-    void resizeEvent(QResizeEvent *event) override;
-    void paintEvent(QPaintEvent *event) override;
+protected:
+   QImage image;
 
-    void mousePressEvent(QMouseEvent *event) override;
+   void resizeEvent(QResizeEvent *event) override;
+
+   virtual void paintEvent(QPaintEvent *event) override;
 
 private:
-    QImage image;
-    int viewX;
+   void resizeImage(QImage *image, const QSize &size);
 };
 
 #endif // IMAGEWIDGET_H
