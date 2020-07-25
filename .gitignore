@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+build-source-Desktop_Qt_5_14_0_clang_64bit-Debug/
+build-source-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/
+
+build-source-Desktop-Debug/
+
+build-source-Desktop_Qt_5_14_1_clang_64bit-Debug/
+
+build-source-Desktop_Qt_5_14_2_clang_64bit-Debug/
+
+build-source-Desktop_Qt_5_15_0_GCC_64bit-Debug/
