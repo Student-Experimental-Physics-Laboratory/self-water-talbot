@@ -8,7 +8,7 @@
 class ImageProcesser
 {
 public:
-    ImageProcesser();
+    ImageProcesser() = default;
     virtual void process(QImage &image) = 0;
 };
 

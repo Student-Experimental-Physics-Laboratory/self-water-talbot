@@ -11,6 +11,8 @@ class ImageWidget : public QWidget
 public:
     explicit ImageWidget(QWidget *parent = nullptr);
 
+    virtual void reprocess();
+
 protected:
    QImage image;
 
