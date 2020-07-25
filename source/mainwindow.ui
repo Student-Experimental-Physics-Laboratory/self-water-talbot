@@ -41,7 +41,14 @@
            </widget>
           </item>
           <item>
-           <widget class="TalbotImageWidget" name="talbotImage" native="true"/>
+           <widget class="TalbotImageWidget" name="talbotImage" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
