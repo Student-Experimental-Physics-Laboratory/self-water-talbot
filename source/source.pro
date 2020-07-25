@@ -22,12 +22,9 @@ SOURCES += \
     drawchart.cpp \
     experiment.cpp \
     imagedrawer.cpp \
-    imageprocesser.cpp \
     imagewidget.cpp \
     main.cpp \
     mainwindow.cpp \
-    myimagewidget.cpp \
-    myprocesser.cpp \
     talbotmatrix.cpp \
     talbotimagewidget.cpp
 
@@ -38,8 +35,6 @@ HEADERS += \
     imageprocesser.h \
     imagewidget.h \
     mainwindow.h \
-    myimagewidget.h \
-    myprocesser.h \
     talbotmatrix.h \
     talbotimagewidget.h
 
