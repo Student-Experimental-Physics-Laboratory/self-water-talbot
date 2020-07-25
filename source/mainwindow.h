@@ -15,9 +15,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-
 private:
+    void setSplitter();
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

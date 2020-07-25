@@ -9,6 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setSplitter();
+}
+void MainWindow::setSplitter()
+{
     QList<int> sizes;
     sizes.append(2 * (width() - 250) / 3);
     sizes.append((width() - 250) / 3);
@@ -20,3 +24,4 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
