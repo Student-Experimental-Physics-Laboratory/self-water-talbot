@@ -26,7 +26,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     talbotmatrix.cpp \
-    talbotimagewidget.cpp
+    talbotimagewidget.cpp \
+    talbotprocesser.cpp
 
 HEADERS += \
     drawchart.h \
@@ -36,7 +37,8 @@ HEADERS += \
     imagewidget.h \
     mainwindow.h \
     talbotmatrix.h \
-    talbotimagewidget.h
+    talbotimagewidget.h \
+    talbotprocesser.h
 
 FORMS += \
     mainwindow.ui
