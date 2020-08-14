@@ -3,10 +3,7 @@
 
 #include "imagewidget.h"
 #include "imageprocesser.h"
-
 #include <QMouseEvent>
-
-#include <talbotmatrix.h>
 
 class TalbotImageProcesser : public ImageProcesser
 {
@@ -14,9 +11,6 @@ public:
     TalbotImageProcesser() = default;
 
     void process(QImage &image) override;
-    void updateTalbotParams(const TalbotParams &newParams);
-private:
-    TalbotMatrix ohThisIsTalbot;
 };
 
 class TalbotImageWidget : public ImageWidget
@@ -25,8 +19,6 @@ class TalbotImageWidget : public ImageWidget
 public:
     explicit TalbotImageWidget(QWidget *parent = nullptr);
     void reprocess() override;
-
-    void updateTalbotParams(const TalbotParams &newParams);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
