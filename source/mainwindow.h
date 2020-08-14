@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "talbotmatrix.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -15,8 +17,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_drawButton_clicked();
+
 private:
     void setSplitter();
+    TalbotParams readParams();
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
