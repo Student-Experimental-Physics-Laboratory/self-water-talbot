@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setSplitter();
+    ui->talbotImage->connectChart(ui->talbotChart);
 }
 
 TalbotParams MainWindow::readParams()

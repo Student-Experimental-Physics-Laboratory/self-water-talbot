@@ -89,7 +89,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="talbotChart" native="true">
+         <widget class="ChartWidget" name="talbotChart" native="true">
           <property name="minimumSize">
            <size>
             <width>100</width>
@@ -288,7 +288,7 @@
      <x>0</x>
      <y>0</y>
      <width>1177</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -335,6 +335,12 @@
    <class>TalbotImageWidget</class>
    <extends>QWidget</extends>
    <header>talbotimagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ChartWidget</class>
+   <extends>QWidget</extends>
+   <header>chartwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

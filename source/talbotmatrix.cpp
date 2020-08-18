@@ -115,7 +115,7 @@ void TalbotMatrix::updateMatrix(int width, int height)
                     }
                 }
 
-                this->matrix[ix][j] += current_amplitude;
+                this->matrix[ix][j] += (current_amplitude);
             }
         }
     }
