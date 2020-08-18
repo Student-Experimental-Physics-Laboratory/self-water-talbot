@@ -10,7 +10,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setSplitter();
+    ui->talbotImage->connectChart(ui->talbotChart);
 }
+
+TalbotParams MainWindow::readParams()
+{
+    return TalbotParams(ui->n_sources_input->value(),
+                        ui->phase_input->value(),
+                        ui->wave_len_input->value(),
+                        ui->wave_slope_input->value(),
+                        ui->reflectible_input->isChecked(),
+                        ui->viscosity_input->value());
+}
+
 void MainWindow::setSplitter()
 {
     QList<int> sizes;
@@ -25,3 +37,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_drawButton_clicked()
+{
+    TalbotParams params(readParams());
+    ui->talbotImage->updateTalbotParams(params);
+    ui->talbotImage->reprocess();
+}

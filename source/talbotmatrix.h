@@ -67,9 +67,9 @@ private:
 public:
     TalbotMatrix();
 
-    void updateParams(TalbotParams new_params);	// добавь в аргументы остальные параметры ковра
+    void updateParams(const TalbotParams &new_params);	// добавь в аргументы остальные параметры ковра
 
-    QImage drawTalbot(int width, int height);
+    void drawTalbot(QImage &image);
 
     ~TalbotMatrix();
 };

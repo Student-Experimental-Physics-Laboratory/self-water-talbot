@@ -1,8 +1,6 @@
-QT       += core gui charts \
-    widgets
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 5.14.1): QT += widgets
-QT       += charts
 
 
 CONFIG += c++11
@@ -19,25 +17,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    drawchart.cpp \
+    chartwidget.cpp \
     experiment.cpp \
     imagedrawer.cpp \
     imagewidget.cpp \
     main.cpp \
     mainwindow.cpp \
-    rulerwidget.cpp \
+    # rulerwidget.cpp \
     talbotmatrix.cpp \
     talbotimagewidget.cpp \
     talbotprocesser.cpp
 
 HEADERS += \
-    drawchart.h \
+    chartwidget.h \
     experiment.h \
     imagedrawer.h \
     imageprocesser.h \
     imagewidget.h \
     mainwindow.h \
-    rulerwidget.h \
+    # rulerwidget.h \
     talbotmatrix.h \
     talbotimagewidget.h \
     talbotprocesser.h

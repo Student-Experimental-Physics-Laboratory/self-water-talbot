@@ -89,7 +89,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="talbotChart" native="true">
+         <widget class="ChartWidget" name="talbotChart" native="true">
           <property name="minimumSize">
            <size>
             <width>100</width>
@@ -153,7 +153,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QCheckBox" name="is_reflectible_input">
+              <widget class="QCheckBox" name="reflectible_input">
                <property name="text">
                 <string>Отражение волн от бортиков</string>
                </property>
@@ -169,7 +169,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="sources_input">
+                <widget class="QSpinBox" name="n_sources_input">
                  <property name="minimum">
                   <number>1</number>
                  </property>
@@ -204,7 +204,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="wavelen_input">
+                <widget class="QDoubleSpinBox" name="wave_len_input">
                  <property name="maximum">
                   <double>99999.990000000005239</double>
                  </property>
@@ -225,7 +225,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="slope_input">
+                <widget class="QSpinBox" name="wave_slope_input">
                  <property name="value">
                   <number>1</number>
                  </property>
@@ -288,7 +288,7 @@
      <x>0</x>
      <y>0</y>
      <width>1177</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -335,6 +335,12 @@
    <class>TalbotImageWidget</class>
    <extends>QWidget</extends>
    <header>talbotimagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ChartWidget</class>
+   <extends>QWidget</extends>
+   <header>chartwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,17 +1,23 @@
 #include "talbotimagewidget.h"
 
 #include <iostream>
+#include <QDebug>
 
 using namespace std;
 
+// ************** TalbotImageProcesser Implementation **************
+
 void TalbotImageProcesser::process(QImage &image)
 {
-    image.fill(qRgb(255, 255, 255));
-    QPainter p(&image);
-    p.setPen(Qt::red);
-    p.setBrush(Qt::blue);
-    p.drawEllipse(image.rect());
+    ohThisIsTalbot.drawTalbot(image);
 }
+
+void TalbotImageProcesser::updateTalbotParams(const TalbotParams &newParams)
+{
+    ohThisIsTalbot.updateParams(newParams);
+}
+
+// ************** TalbotImageWidget Implementation **************
 
 TalbotImageWidget::TalbotImageWidget(QWidget *parent) : ImageWidget(parent)
 {
@@ -31,9 +37,46 @@ void TalbotImageWidget::mousePressEvent(QMouseEvent *event)
     setFocus();
     viewX = event->pos().x();
     repaint();
+    drawChart();
+}
+
+void TalbotImageWidget::drawChart()
+{
+    qDebug() << "This is a drawChart()";
+    vector<double> x = getGraph();
+    vector<double> y = getGraph();
+    for (size_t i = 0; i < y.size(); i++)
+    {
+        y.at(i) = i;
+    }
+    talbotChart->updateDots(x, y);
+    talbotChart->reprocess();
 }
 
 void TalbotImageWidget::reprocess()
 {
     processer.process(this->image);
+    this->update();
 }
+
+vector<double> TalbotImageWidget::getGraph()
+{
+    vector<double> result(talbotChart->height());
+    for (int i = 0; i < talbotChart->height(); i++)
+    {
+        QRgb pixel = image.pixel(viewX, i);
+        result.at(i) = pixel % 256;
+    }
+    return result;
+}
+
+void TalbotImageWidget::connectChart(ChartWidget *widget)
+{
+    talbotChart = widget;
+}
+
+void TalbotImageWidget::updateTalbotParams(const TalbotParams &newParams)
+{
+    processer.updateTalbotParams(newParams);
+}
+
