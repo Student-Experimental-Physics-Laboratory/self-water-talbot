@@ -25,16 +25,16 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
-           <widget class="QWidget" name="vruler" native="true">
+           <widget class="RulerWidget" name="vruler" native="true">
             <property name="minimumSize">
              <size>
-              <width>20</width>
+              <width>30</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>20</width>
+              <width>30</width>
               <height>16777215</height>
              </size>
             </property>
@@ -53,17 +53,17 @@
          </layout>
         </item>
         <item>
-         <widget class="QWidget" name="hruler" native="true">
+         <widget class="RulerWidget" name="hruler" native="true">
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>20</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>20</height>
+            <height>30</height>
            </size>
           </property>
          </widget>
@@ -89,7 +89,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="talbotChart" native="true">
+         <widget class="ChartWidget" name="talbotChart" native="true">
           <property name="minimumSize">
            <size>
             <width>100</width>
@@ -99,17 +99,17 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="cruler" native="true">
+         <widget class="RulerWidget" name="cruler" native="true">
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>20</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>20</height>
+            <height>30</height>
            </size>
           </property>
          </widget>
@@ -288,7 +288,7 @@
      <x>0</x>
      <y>0</y>
      <width>1177</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -335,6 +335,18 @@
    <class>TalbotImageWidget</class>
    <extends>QWidget</extends>
    <header>talbotimagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ChartWidget</class>
+   <extends>QWidget</extends>
+   <header>chartwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RulerWidget</class>
+   <extends>QWidget</extends>
+   <header>rulerwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
