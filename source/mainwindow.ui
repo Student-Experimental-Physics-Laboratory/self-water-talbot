@@ -153,7 +153,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QCheckBox" name="reflectible_input">
+              <widget class="QCheckBox" name="is_reflectible_input">
                <property name="text">
                 <string>Отражение волн от бортиков</string>
                </property>
@@ -169,7 +169,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="n_sources_input">
+                <widget class="QSpinBox" name="sources_input">
                  <property name="minimum">
                   <number>1</number>
                  </property>
@@ -204,7 +204,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="wave_len_input">
+                <widget class="QDoubleSpinBox" name="wavelen_input">
                  <property name="maximum">
                   <double>99999.990000000005239</double>
                  </property>
@@ -225,7 +225,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="wave_slope_input">
+                <widget class="QSpinBox" name="slope_input">
                  <property name="value">
                   <number>1</number>
                  </property>

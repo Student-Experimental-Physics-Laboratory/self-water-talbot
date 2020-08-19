@@ -30,18 +30,26 @@ TalbotMatrix::TalbotMatrix()
     this->params = TalbotParams();
 }
 
-void TalbotMatrix::updateParams(const TalbotParams &new_params)
+void TalbotMatrix::updateParams(TalbotParams new_params)
 {
     this->params = new_params;
 }
 
-void TalbotMatrix::drawTalbot(QImage &image)
+QImage TalbotMatrix::drawTalbot(int width, int height)
 {
-    std::vector<std::vector<unsigned int>> matrix = this->getMatrix(image.height(), image.width());
+    std::vector<std::vector<unsigned int>> matrix = this->getMatrix(height, width);
+    QImage image(width, height, QImage::Format_ARGB32);
     QRgb *pixels = (QRgb *) image.bits();
-    for (int i = 0; i < image.height(); i++)
-        for (int j = 0; j < image.width(); j++)
-            pixels[i * image.width() + j] = QColor::fromRgb(matrix[j][i], matrix[j][i], matrix[j][i]).rgb();
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            pixels[i * width + j] = QColor::fromRgb(matrix[j][i], matrix[j][i], matrix[j][i]).rgb();
+        }
+    }
+
+    return image;
 }
 
 std::vector<std::pair<unsigned int, unsigned int>> TalbotMatrix::placeSources(int width, int height)

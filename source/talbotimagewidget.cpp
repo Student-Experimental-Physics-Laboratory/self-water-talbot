@@ -5,19 +5,14 @@
 
 using namespace std;
 
-// ************** TalbotImageProcesser Implementation **************
-
 void TalbotImageProcesser::process(QImage &image)
 {
-    ohThisIsTalbot.drawTalbot(image);
+    image.fill(qRgb(255, 255, 255));
+    QPainter p(&image);
+    p.setPen(Qt::red);
+    p.setBrush(Qt::blue);
+    p.drawEllipse(image.rect());
 }
-
-void TalbotImageProcesser::updateTalbotParams(const TalbotParams &newParams)
-{
-    ohThisIsTalbot.updateParams(newParams);
-}
-
-// ************** TalbotImageWidget Implementation **************
 
 TalbotImageWidget::TalbotImageWidget(QWidget *parent) : ImageWidget(parent)
 {

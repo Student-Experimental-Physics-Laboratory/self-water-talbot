@@ -11,15 +11,14 @@
 
 using namespace std;
 
+#include <QMouseEvent>
+  
 class TalbotImageProcesser : public ImageProcesser
 {
 public:
     TalbotImageProcesser() = default;
 
     void process(QImage &image) override;
-    void updateTalbotParams(const TalbotParams &newParams);
-private:
-    TalbotMatrix ohThisIsTalbot;
 };
 
 class TalbotImageWidget : public ImageWidget
