@@ -11,6 +11,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setSplitter();
     ui->talbotImage->connectChart(ui->talbotChart);
+    ui->vruler->setOrientation(Qt::Vertical);
+    ui->hruler->setOrientation(Qt::Horizontal);
+    ui->cruler->setOrientation(Qt::Horizontal);
+    ui->vruler->reprocess();
+    ui->hruler->reprocess();
+    ui->cruler->reprocess();
 }
 
 TalbotParams MainWindow::readParams()
@@ -42,4 +48,8 @@ void MainWindow::on_drawButton_clicked()
     TalbotParams params(readParams());
     ui->talbotImage->updateTalbotParams(params);
     ui->talbotImage->reprocess();
+    ui->talbotImage->drawChart();
+    ui->vruler->reprocess();
+    ui->hruler->reprocess();
+    ui->cruler->reprocess();
 }

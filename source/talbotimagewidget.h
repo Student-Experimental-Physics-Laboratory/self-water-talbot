@@ -29,18 +29,19 @@ public:
     explicit TalbotImageWidget(QWidget *parent = nullptr);
     void reprocess() override;
 
-    vector<double> getGraph();
     void connectChart(ChartWidget *widget);
+    void drawChart();
 
     void updateTalbotParams(const TalbotParams &newParams);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 private:
+    vector<double> getGraph();
     ChartWidget *talbotChart;
     TalbotImageProcesser processer;
-    void drawChart();
     int viewX;
 };
 

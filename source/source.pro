@@ -23,7 +23,7 @@ SOURCES += \
     imagewidget.cpp \
     main.cpp \
     mainwindow.cpp \
-    # rulerwidget.cpp \
+    rulerwidget.cpp \
     talbotmatrix.cpp \
     talbotimagewidget.cpp \
     talbotprocesser.cpp
@@ -35,7 +35,7 @@ HEADERS += \
     imageprocesser.h \
     imagewidget.h \
     mainwindow.h \
-    # rulerwidget.h \
+    rulerwidget.h \
     talbotmatrix.h \
     talbotimagewidget.h \
     talbotprocesser.h

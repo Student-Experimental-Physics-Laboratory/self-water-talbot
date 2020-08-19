@@ -22,6 +22,7 @@ void TalbotImageProcesser::updateTalbotParams(const TalbotParams &newParams)
 TalbotImageWidget::TalbotImageWidget(QWidget *parent) : ImageWidget(parent)
 {
     viewX = image.width() / 2;
+    setMouseTracking(false);
 }
 
 void TalbotImageWidget::paintEvent(QPaintEvent *event)
@@ -33,6 +34,14 @@ void TalbotImageWidget::paintEvent(QPaintEvent *event)
 }
 
 void TalbotImageWidget::mousePressEvent(QMouseEvent *event)
+{
+    setFocus();
+    viewX = event->pos().x();
+    repaint();
+    drawChart();
+}
+
+void TalbotImageWidget::mouseMoveEvent(QMouseEvent *event)
 {
     setFocus();
     viewX = event->pos().x();
