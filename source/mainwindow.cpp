@@ -18,6 +18,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->hruler->reprocess();
     ui->cruler->reprocess();
 }
+
+TalbotParams MainWindow::readParams()
+{
+    return TalbotParams(ui->n_sources_input->value(),
+                        ui->phase_input->value(),
+                        ui->wave_len_input->value(),
+                        ui->wave_slope_input->value(),
+                        ui->reflectible_input->isChecked(),
+                        ui->viscosity_input->value());
+}
+
 void MainWindow::setSplitter()
 {
     QList<int> sizes;

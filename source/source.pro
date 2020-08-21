@@ -25,8 +25,7 @@ SOURCES += \
     mainwindow.cpp \
     rulerwidget.cpp \
     talbotmatrix.cpp \
-    talbotimagewidget.cpp \
-    talbotprocesser.cpp
+    talbotimagewidget.cpp
 
 HEADERS += \
     chartwidget.h \
@@ -37,8 +36,7 @@ HEADERS += \
     mainwindow.h \
     rulerwidget.h \
     talbotmatrix.h \
-    talbotimagewidget.h \
-    talbotprocesser.h
+    talbotimagewidget.h
 
 FORMS += \
     mainwindow.ui
