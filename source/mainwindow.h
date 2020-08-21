@@ -27,6 +27,8 @@ private slots:
 
 private:
     void setSplitter();
+    void setUpConnections();
+
     TalbotParams readParams();
     Ui::MainWindow *ui;
 };

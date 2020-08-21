@@ -51,7 +51,7 @@ void TalbotImageWidget::mouseMoveEvent(QMouseEvent *event)
 
 void TalbotImageWidget::drawChart()
 {
-    qDebug() << "This is a drawChart()";
+//    qDebug() << "This is a drawChart()";
     vector<double> x = getGraph();
     vector<double> y = getGraph();
     for (size_t i = 0; i < y.size(); i++)
@@ -88,3 +88,18 @@ void TalbotImageWidget::updateTalbotParams(const TalbotParams &newParams)
 {
     processer.updateTalbotParams(newParams);
 }
+
+void TalbotImageWidget::setImage(QImage &image_)
+{
+    QPainter p(&image);
+    QRect drawRect(image.rect());
+    p.drawImage(drawRect, image, drawRect);
+    repaint();
+}
+
+void TalbotImageWidget::setViewX(int viewX_)
+{
+    viewX = viewX_;
+    repaint();
+}
+

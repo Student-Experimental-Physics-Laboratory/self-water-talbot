@@ -8,7 +8,12 @@ class Experiment
 public:
     Experiment();
 private:
-    TalbotParams params;
+    QImage talbotImage;
+    QImage chartImage;
+
+    int talbotViewX;
+
+    TalbotParams talbotParams;
 };
 
 #endif // EXPERIMENT_H

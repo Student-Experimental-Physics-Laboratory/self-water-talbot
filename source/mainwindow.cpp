@@ -17,6 +17,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->vruler->reprocess();
     ui->hruler->reprocess();
     ui->cruler->reprocess();
+
+    setUpConnections();
+}
+
+void MainWindow::setUpConnections()
+{
+
 }
 
 TalbotParams MainWindow::readParams()

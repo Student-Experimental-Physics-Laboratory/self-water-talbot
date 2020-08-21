@@ -34,11 +34,16 @@ public:
 
     void updateTalbotParams(const TalbotParams &newParams);
 
+public slots:
+    void setViewX(int viewX_);
+    void setImage(QImage &image_);
+
 protected:
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
 private:
+    // QImage in parent class
     vector<double> getGraph();
     ChartWidget *talbotChart;
     TalbotImageProcesser processer;
