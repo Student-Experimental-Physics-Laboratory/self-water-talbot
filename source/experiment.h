@@ -1,21 +1,14 @@
 #ifndef EXPERIMENT_H
 #define EXPERIMENT_H
 
-#include <QWidget>
-#include <QHBoxLayout>
-#include <QCheckBox>
-#include <QLabel>
-#include <QLineEdit>
+#include "talbotmatrix.h"
 
-class Experiment : public QWidget
+class Experiment
 {
-    Q_OBJECT
 public:
-    explicit Experiment(QWidget *parent = nullptr);
-
+    Experiment();
 private:
-    QHBoxLayout *layout;
-
+    TalbotParams params;
 };
 
 #endif // EXPERIMENT_H

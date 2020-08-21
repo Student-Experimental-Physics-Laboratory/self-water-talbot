@@ -53,3 +53,13 @@ void MainWindow::on_drawButton_clicked()
     ui->hruler->reprocess();
     ui->cruler->reprocess();
 }
+
+void MainWindow::on_add_new_experiment_clicked()
+{
+    ui->experiments->add();
+}
+
+void MainWindow::on_delete_selected_experiments_clicked()
+{
+    ui->experiments->removeSelected();
+}

@@ -73,22 +73,6 @@
       <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="chart">
         <item>
-         <widget class="QWidget" name="cinfo" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="ChartWidget" name="talbotChart" native="true">
           <property name="minimumSize">
            <size>
@@ -125,7 +109,7 @@
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
         <item>
-         <widget class="QListWidget" name="experiments">
+         <widget class="ExperimentList" name="experiments">
           <property name="minimumSize">
            <size>
             <width>200</width>
@@ -142,6 +126,22 @@
             <height>30</height>
            </size>
           </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QPushButton" name="add_new_experiment">
+             <property name="text">
+              <string>Создать новый эксперимент</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="delete_selected_experiments">
+             <property name="text">
+              <string>Удалить выбранное</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
@@ -288,7 +288,7 @@
      <x>0</x>
      <y>0</y>
      <width>1177</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -348,6 +348,11 @@
    <extends>QWidget</extends>
    <header>rulerwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ExperimentList</class>
+   <extends>QListWidget</extends>
+   <header>experimentlist.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
