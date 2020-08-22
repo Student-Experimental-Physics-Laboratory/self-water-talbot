@@ -32,6 +32,8 @@ public:
     void connectChart(ChartWidget *widget);
     void drawChart();
 
+signals:
+    void talbotParamsUpdated(const TalbotParams &params);
 
 public slots:
     void connectExperiment(Experiment *experiment);

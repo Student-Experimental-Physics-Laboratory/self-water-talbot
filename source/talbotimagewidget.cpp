@@ -85,6 +85,7 @@ void TalbotImageWidget::updateTalbotParams(const TalbotParams &newParams)
 {
     currentExperiment->setTalbotParams(newParams);
     processer.updateTalbotParams(newParams);
+    talbotParamsUpdated(newParams);
 }
 
 void TalbotImageWidget::setImage(const QImage &image_)

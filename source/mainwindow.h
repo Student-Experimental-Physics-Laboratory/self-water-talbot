@@ -19,6 +19,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void setParams(const TalbotParams &params);
+
 private slots:
     void on_drawButton_clicked();
 

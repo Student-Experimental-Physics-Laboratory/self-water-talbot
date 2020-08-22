@@ -27,6 +27,8 @@ void MainWindow::setUpConnections()
 {
     connect(ui->experiments, &ExperimentList::experimentSelectionChanged, ui->talbotImage, &TalbotImageWidget::connectExperiment);
     emit ui->experiments->itemSelectionChanged();
+
+    connect(ui->talbotImage, &TalbotImageWidget::talbotParamsUpdated, this, &MainWindow::setParams);
 }
 
 TalbotParams MainWindow::readParams()
@@ -37,6 +39,16 @@ TalbotParams MainWindow::readParams()
                         ui->wave_slope_input->value(),
                         ui->reflectible_input->isChecked(),
                         ui->viscosity_input->value());
+}
+
+void MainWindow::setParams(const TalbotParams &params)
+{
+    ui->n_sources_input->setValue(params.n_sources);
+    ui->phase_input->setValue(params.phase);
+    ui->wave_len_input->setValue(params.wave_len);
+    ui->wave_slope_input->setValue(params.wave_slope);
+    ui->reflectible_input->setChecked(params.reflectible);
+    ui->viscosity_input->setValue(params.viscosity);
 }
 
 void MainWindow::setSplitter()
