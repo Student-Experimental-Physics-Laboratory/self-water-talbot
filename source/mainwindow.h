@@ -5,6 +5,7 @@
 #include <QMainWindow>
 
 #include "talbotmatrix.h"
+#include "experiment.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

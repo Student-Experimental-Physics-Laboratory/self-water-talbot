@@ -3,12 +3,15 @@
 #include "talbotmatrix.h"
 
 #include <QList>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setUpConnections();
+
     this->setSplitter();
     ui->talbotImage->connectChart(ui->talbotChart);
     ui->vruler->setOrientation(Qt::Vertical);
@@ -18,12 +21,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->hruler->reprocess();
     ui->cruler->reprocess();
 
-    setUpConnections();
 }
 
 void MainWindow::setUpConnections()
 {
-
+    connect(ui->experiments, &ExperimentList::experimentSelectionChanged, ui->talbotImage, &TalbotImageWidget::connectExperiment);
+    emit ui->experiments->itemSelectionChanged();
 }
 
 TalbotParams MainWindow::readParams()

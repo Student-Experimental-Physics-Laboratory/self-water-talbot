@@ -1,9 +1,6 @@
 #include "talbotimagewidget.h"
 
-#include <iostream>
 #include <QDebug>
-
-using namespace std;
 
 // ************** TalbotImageProcesser Implementation **************
 
@@ -36,8 +33,7 @@ void TalbotImageWidget::paintEvent(QPaintEvent *event)
 void TalbotImageWidget::mousePressEvent(QMouseEvent *event)
 {
     setFocus();
-    viewX = event->pos().x();
-    repaint();
+    setViewX(event->pos().x());
     drawChart();
 }
 
@@ -65,6 +61,7 @@ void TalbotImageWidget::drawChart()
 void TalbotImageWidget::reprocess()
 {
     processer.process(this->image);
+    currentExperiment->setTalbotImage(this->image);
     this->update();
 }
 
@@ -86,20 +83,33 @@ void TalbotImageWidget::connectChart(ChartWidget *widget)
 
 void TalbotImageWidget::updateTalbotParams(const TalbotParams &newParams)
 {
+    currentExperiment->setTalbotParams(newParams);
     processer.updateTalbotParams(newParams);
 }
 
-void TalbotImageWidget::setImage(QImage &image_)
+void TalbotImageWidget::setImage(const QImage &image_)
 {
     QPainter p(&image);
     QRect drawRect(image.rect());
-    p.drawImage(drawRect, image, drawRect);
+    p.drawImage(drawRect, image_, drawRect);
     repaint();
 }
 
-void TalbotImageWidget::setViewX(int viewX_)
+void TalbotImageWidget::setViewX(const int viewX_)
 {
     viewX = viewX_;
+    currentExperiment->setViewX(viewX_);
     repaint();
+    drawChart();
 }
 
+void TalbotImageWidget::connectExperiment(Experiment *experiment)
+{
+    currentExperiment = experiment;
+    if (experiment->isSet())
+    {
+        updateTalbotParams(experiment->getTalbotParams());;
+        setImage(experiment->getTalbotImage());
+        setViewX(experiment->getViewX());
+    }
+}
