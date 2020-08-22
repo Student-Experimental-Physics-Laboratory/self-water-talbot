@@ -51,6 +51,9 @@ void ExperimentList::removeSelected()
 
 void ExperimentList::changeSelectedExperiment()
 {
-    Experiment *newSelected = experiments.at(indexFromItem(selectedItems().first()).row());
+    int x = indexFromItem(selectedItems().first()).row();
+    if (x >= experiments.size())
+        x = 0;
+    Experiment *newSelected = experiments.at(x);
     emit experimentSelectionChanged(newSelected);
 }

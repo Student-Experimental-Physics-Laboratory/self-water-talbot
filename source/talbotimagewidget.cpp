@@ -99,6 +99,7 @@ void TalbotImageWidget::setViewX(const int viewX_)
 {
     viewX = viewX_;
     currentExperiment->setViewX(viewX_);
+    currentExperiment->setTalbotImage(image);
     repaint();
     drawChart();
 }

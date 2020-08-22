@@ -35,6 +35,7 @@ void Experiment::setTalbotImage(const QImage &image_)
 void Experiment::setViewX(int viewX_)
 {
     talbotViewX = viewX_;
+    isSet_ = true;
 }
 
 void Experiment::setTalbotParams(const TalbotParams &params)
