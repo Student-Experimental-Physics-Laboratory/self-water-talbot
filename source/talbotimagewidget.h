@@ -32,6 +32,8 @@ public:
     void connectChart(ChartWidget *widget);
     void drawChart();
 
+    QImage getImage() override;
+
 signals:
     void talbotParamsUpdated(const TalbotParams &params);
 
@@ -46,6 +48,8 @@ protected:
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
+
+    void drawViewX(QPainter &p);
 private:
     // QImage in parent class
     TalbotImageProcesser processer;

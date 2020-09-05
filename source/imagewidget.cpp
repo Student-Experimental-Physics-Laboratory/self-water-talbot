@@ -10,6 +10,11 @@ void ImageWidget::reprocess()
     image.fill(qRgb(0, 0, 0));
 }
 
+QImage ImageWidget::getImage()
+{
+    return image;
+}
+
 void ImageWidget::resizeImage(QImage *image, const QSize &newSize)
 {
     if (image->size() == newSize)

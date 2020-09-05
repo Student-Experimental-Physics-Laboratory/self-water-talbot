@@ -4,6 +4,7 @@
 
 #include <QList>
 #include <QDebug>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -84,4 +85,17 @@ void MainWindow::on_add_new_experiment_clicked()
 void MainWindow::on_delete_selected_experiments_clicked()
 {
     ui->experiments->removeSelected();
+}
+
+
+void MainWindow::on_safeButton_clicked()
+{
+    TalbotReporter tr(ui->talbotImage->getImage(),
+                      ui->talbotChart->getImage(),
+                      ui->hruler->getImage(),
+                      ui->vruler->getImage(),
+                      ui->cruler->getImage(),
+                      readParams());
+
+    tr.safeToFile(QFileDialog().getSaveFileName());
 }

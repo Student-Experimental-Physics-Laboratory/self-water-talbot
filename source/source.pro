@@ -26,7 +26,8 @@ SOURCES += \
     rulerwidget.cpp \
     talbotmatrix.cpp \
     talbotimagewidget.cpp \
-    experimentlist.cpp
+    experimentlist.cpp \
+    talbotreporter.cpp
 
 HEADERS += \
     chartwidget.h \
@@ -38,7 +39,8 @@ HEADERS += \
     rulerwidget.h \
     talbotmatrix.h \
     talbotimagewidget.h \
-    experimentlist.h
+    experimentlist.h \
+    talbotreporter.h
 
 
 FORMS += \

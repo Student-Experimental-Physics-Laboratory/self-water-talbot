@@ -31,13 +31,10 @@ public:
     explicit RulerWidget(QWidget *parent = nullptr);
     void setOrientation(Qt::Orientation orient);
 
-    void reprocess() override; //  TODO here just use process(QImage) from your
-    // processer
+    void reprocess() override;
 
 protected:
-    void paintEvent(QPaintEvent *event) override; // TODO just draw image
     void resizeEvent(QResizeEvent *event) override;
-    // (image is in base class)
 
 private:
     RulerProcesser processer;

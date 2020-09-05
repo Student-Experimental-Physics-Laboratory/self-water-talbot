@@ -1,4 +1,3 @@
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -6,6 +5,7 @@
 
 #include "talbotmatrix.h"
 #include "experiment.h"
+#include "talbotreporter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +28,9 @@ private slots:
     void on_add_new_experiment_clicked();
 
     void on_delete_selected_experiments_clicked();
+
+
+    void on_safeButton_clicked();
 
 private:
     void setSplitter();

@@ -22,12 +22,25 @@ TalbotImageWidget::TalbotImageWidget(QWidget *parent) : ImageWidget(parent)
     setMouseTracking(false);
 }
 
+QImage TalbotImageWidget::getImage()
+{
+    QImage resImage = ImageWidget::getImage();
+    QPainter p(&resImage);
+    drawViewX(p);
+    return resImage;
+}
+
+void TalbotImageWidget::drawViewX(QPainter &p)
+{
+    p.setPen(Qt::red);
+    p.drawLine(viewX, 0, viewX, height());
+}
+
 void TalbotImageWidget::paintEvent(QPaintEvent *event)
 {
     ImageWidget::paintEvent(event);
     QPainter p(this);
-    p.setPen(Qt::red);
-    p.drawLine(viewX, 0, viewX, height());
+    drawViewX(p);
 }
 
 void TalbotImageWidget::mousePressEvent(QMouseEvent *event)

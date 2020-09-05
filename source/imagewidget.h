@@ -13,6 +13,8 @@ public:
 
     virtual void reprocess();
 
+    virtual QImage getImage();
+
 protected:
    QImage image;
 
