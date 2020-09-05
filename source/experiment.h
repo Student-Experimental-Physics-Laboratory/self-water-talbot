@@ -1,21 +1,42 @@
 #ifndef EXPERIMENT_H
 #define EXPERIMENT_H
 
-#include <QWidget>
-#include <QHBoxLayout>
-#include <QCheckBox>
-#include <QLabel>
-#include <QLineEdit>
+#include <QObject>
 
-class Experiment : public QWidget
+#include "talbotmatrix.h"
+
+class Experiment : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit Experiment(QWidget *parent = nullptr);
+    explicit Experiment(QObject *parent = nullptr);
+
+    QImage &getTalbotImage();
+
+    int &getViewX();
+
+    TalbotParams &getTalbotParams();
+
+    bool isSet();
+
+public slots:
+    void setTalbotThings(const QImage &image_, int viewX_, const TalbotParams &talbotParams_);
+
+    void setTalbotImage(const QImage &image_);
+
+    void setViewX(int viewX_);
+
+    void setTalbotParams(const TalbotParams &params);
 
 private:
-    QHBoxLayout *layout;
+    QImage talbotImage;
 
+    int talbotViewX;
+
+    TalbotParams talbotParams;
+
+    bool isSet_ = false;
 };
 
 #endif // EXPERIMENT_H

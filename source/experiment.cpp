@@ -1,9 +1,49 @@
 #include "experiment.h"
 
-Experiment::Experiment(QWidget *parent) : QWidget(parent)
+Experiment::Experiment(QObject *parent)
 {
-    layout = new QHBoxLayout();
-    this->setLayout(layout);
-    this->layout->addWidget(new QLabel("#1"));
-    this->layout->addWidget(new QLineEdit());
+}
+
+QImage &Experiment::getTalbotImage()
+{
+    return talbotImage;
+}
+
+int &Experiment::getViewX()
+{
+    return talbotViewX;
+}
+
+TalbotParams &Experiment::getTalbotParams()
+{
+    return talbotParams;
+}
+
+void Experiment::setTalbotThings(const QImage &image_, int viewX_, const TalbotParams &talbotParams_)
+{
+    setTalbotImage(image_);
+    setViewX(viewX_);
+    setTalbotParams(talbotParams_);
+}
+
+void Experiment::setTalbotImage(const QImage &image_)
+{
+    talbotImage = image_;
+    isSet_ = true;
+}
+
+void Experiment::setViewX(int viewX_)
+{
+    talbotViewX = viewX_;
+    isSet_ = true;
+}
+
+void Experiment::setTalbotParams(const TalbotParams &params)
+{
+    talbotParams = params;
+}
+
+bool Experiment::isSet()
+{
+    return isSet_;
 }

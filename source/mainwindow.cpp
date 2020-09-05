@@ -3,12 +3,16 @@
 #include "talbotmatrix.h"
 
 #include <QList>
+#include <QDebug>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setUpConnections();
+
     this->setSplitter();
     ui->talbotImage->connectChart(ui->talbotChart);
     ui->vruler->setOrientation(Qt::Vertical);
@@ -17,6 +21,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->vruler->reprocess();
     ui->hruler->reprocess();
     ui->cruler->reprocess();
+
+}
+
+void MainWindow::setUpConnections()
+{
+    connect(ui->experiments, &ExperimentList::experimentSelectionChanged, ui->talbotImage, &TalbotImageWidget::connectExperiment);
+    emit ui->experiments->itemSelectionChanged();
+
+    connect(ui->talbotImage, &TalbotImageWidget::talbotParamsUpdated, this, &MainWindow::setParams);
 }
 
 TalbotParams MainWindow::readParams()
@@ -27,6 +40,16 @@ TalbotParams MainWindow::readParams()
                         ui->wave_slope_input->value(),
                         ui->reflectible_input->isChecked(),
                         ui->viscosity_input->value());
+}
+
+void MainWindow::setParams(const TalbotParams &params)
+{
+    ui->n_sources_input->setValue(params.n_sources);
+    ui->phase_input->setValue(params.phase);
+    ui->wave_len_input->setValue(params.wave_len);
+    ui->wave_slope_input->setValue(params.wave_slope);
+    ui->reflectible_input->setChecked(params.reflectible);
+    ui->viscosity_input->setValue(params.viscosity);
 }
 
 void MainWindow::setSplitter()
@@ -52,4 +75,27 @@ void MainWindow::on_drawButton_clicked()
     ui->vruler->reprocess();
     ui->hruler->reprocess();
     ui->cruler->reprocess();
+}
+
+void MainWindow::on_add_new_experiment_clicked()
+{
+    ui->experiments->add();
+}
+
+void MainWindow::on_delete_selected_experiments_clicked()
+{
+    ui->experiments->removeSelected();
+}
+
+
+void MainWindow::on_safeButton_clicked()
+{
+    TalbotReporter tr(ui->talbotImage->getImage(),
+                      ui->talbotChart->getImage(),
+                      ui->hruler->getImage(),
+                      ui->vruler->getImage(),
+                      ui->cruler->getImage(),
+                      readParams());
+
+    tr.safeToFile(QFileDialog().getSaveFileName());
 }

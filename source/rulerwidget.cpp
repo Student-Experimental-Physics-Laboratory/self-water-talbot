@@ -115,11 +115,6 @@ void RulerWidget::reprocess()
     this->update();
 }
 
-void RulerWidget::paintEvent(QPaintEvent *event)
-{
-    ImageWidget::paintEvent(event);
-}
-
 void RulerWidget::resizeEvent(QResizeEvent *event)
 {
     ImageWidget::resizeEvent(event);

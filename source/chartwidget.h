@@ -16,8 +16,7 @@
 #include "imagewidget.h"
 
 #include <QWidget>
-#include <QColor>
-#include <vector>
+#include <QColor> #include <vector>
 #include <utility>
 
 #include <cmath>
@@ -53,8 +52,6 @@ public:
     void updateDots(vector<pair<double, double>> newVec);
     void updateDots(const vector<double> &newX, const vector<double> &newY);
     void updateDots(QVector<QPointF> newVec);
-protected:
-    void paintEvent(QPaintEvent *event) override;
 private:
     ChartProcesser processer;
 };

@@ -126,8 +126,3 @@ void ChartWidget::updateDots(QVector<QPointF> newVec)
 {
     processer.updateDots(newVec);
 }
-
-void ChartWidget::paintEvent(QPaintEvent *event)
-{
-    ImageWidget::paintEvent(event);
-}
