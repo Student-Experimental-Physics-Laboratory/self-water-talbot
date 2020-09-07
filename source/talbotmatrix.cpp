@@ -64,10 +64,10 @@ std::vector<std::pair<unsigned int, unsigned int>> TalbotMatrix::placeSources(in
 
 int TalbotMatrix::amplitudeFunction(int d_x, int d_y)
 {
-    double distance = sqrt(pow(d_x, 2) + pow(d_y, 2)) + this->params.phase;
+	double distance = sqrt(pow(d_x, 2) + pow(d_y, 2));
     int	function_value = 0;
 	function_value += this->params.max_amp;
-	function_value *= pow(sin(distance / this->params.wave_len), this->params.wave_slope);
+	function_value *= pow(sin(distance / this->params.wave_len / M_PI + this->params.phase * 2 * M_PI), this->params.wave_slope);
 	function_value *= exp(-distance * this->params.viscosity / 1000);
 	return function_value;
 }
