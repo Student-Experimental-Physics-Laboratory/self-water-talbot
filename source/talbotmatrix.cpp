@@ -6,7 +6,7 @@
 
 double countAmplitude(int n_sources, bool reflectible)
 {
-    return 128 / n_sources / (reflectible ? 2.5 : 1);
+	return 128 / n_sources / (reflectible ? 2 : 1);
 }
 
 TalbotParams::TalbotParams(int n_sources,
@@ -17,11 +17,11 @@ TalbotParams::TalbotParams(int n_sources,
     double viscosity)
 {
     this->n_sources = n_sources;
+	this->reflectible = reflectible;
     this->max_amp = countAmplitude(this->n_sources, this->reflectible);
     this->phase = phase;
     this->wave_len = wave_len;
-    this->wave_slope = wave_slope;
-    this->reflectible = reflectible;
+	this->wave_slope = wave_slope;
     this->viscosity = viscosity;
 }
 
@@ -66,10 +66,10 @@ int TalbotMatrix::amplitudeFunction(int d_x, int d_y)
 {
     double distance = sqrt(pow(d_x, 2) + pow(d_y, 2)) + this->params.phase;
     int	function_value = 0;
-    function_value += this->params.max_amp;
-    function_value *= pow((sin(distance / this->params.wave_len) + 1) / 2, this->params.wave_slope);
-    function_value *= exp(-distance * this->params.viscosity / 1000);
-    return function_value;
+	function_value += this->params.max_amp;
+	function_value *= pow(sin(distance / this->params.wave_len), this->params.wave_slope);
+	function_value *= exp(-distance * this->params.viscosity / 1000);
+	return function_value;
 }
 
 std::vector<std::vector<unsigned int>> TalbotMatrix::getMatrix(int width, int height)
@@ -87,7 +87,7 @@ void TalbotMatrix::updateMatrix(int width, int height)
     std::vector<std::pair<unsigned int, unsigned int>> sources = this->placeSources(width, height);
 
     unsigned int wave_distance
-        = std::max(height, width);  //Дистанция, на которую волна распространяется
+		= height;  //Дистанция, на которую волна распространяется
 
     auto reflection_distance = (int) (this->params.reflectible ? wave_distance : 0);
     auto lower_border = -reflection_distance;
