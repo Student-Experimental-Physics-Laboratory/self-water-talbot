@@ -29,6 +29,10 @@ void RulerProcesser::process(QImage &image)
 
     int cnt = 1;
     int h = image.height(), w = image.width();
+
+	QFont font = p.font();
+	font.setPointSize(font.pointSize() * 0.8);
+	p.setFont(font);
 	p.drawText(2, 11, "см");
 
     if (orientation == Qt::Horizontal)
