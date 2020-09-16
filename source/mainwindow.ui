@@ -212,7 +212,17 @@
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="phase_input"/>
+                <widget class="QDoubleSpinBox" name="phase_input">
+                 <property name="suffix">
+                  <string> * 2PI (Радиан)</string>
+                 </property>
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -227,6 +237,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wave_len_input">
+                 <property name="suffix">
+                  <string> см</string>
+                 </property>
                  <property name="maximum">
                   <double>99999.990000000005239</double>
                  </property>
@@ -310,7 +323,7 @@
      <x>0</x>
      <y>0</y>
      <width>1318</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

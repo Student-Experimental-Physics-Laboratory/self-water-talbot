@@ -17,7 +17,7 @@ void RulerProcesser::setMetrix(double mm)
 
 void RulerProcesser::process(QImage &image)
 {
-    QPainter p(&image);
+	QPainter p(&image);
     p.setPen(Qt::black);
     p.setBrush(QColor(0xfaffff));
 
@@ -29,6 +29,11 @@ void RulerProcesser::process(QImage &image)
 
     int cnt = 1;
     int h = image.height(), w = image.width();
+
+	QFont font = p.font();
+	font.setPointSize(font.pointSize() * 0.8);
+	p.setFont(font);
+	p.drawText(2, 11, "см");
 
     if (orientation == Qt::Horizontal)
     {
@@ -111,6 +116,7 @@ void RulerWidget::setOrientation(Qt::Orientation orient)
 
 void RulerWidget::reprocess()
 {
+	processer.setMetrix(processer.Orientation() == Qt::Horizontal ? width() / 2.0 : height() / 2.0);
     processer.process(this->image);
     this->update();
 }
