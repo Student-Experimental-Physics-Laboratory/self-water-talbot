@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1177</width>
-    <height>629</height>
+    <width>1318</width>
+    <height>790</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,71 +25,77 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
-           <widget class="QWidget" name="vruler" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>20</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="TalbotImageWidget" name="talbotImage" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <widget class="RulerWidget" name="vruler" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="TalbotImageWidget" name="talbotImage" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QWidget" name="hruler_design_shit" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="RulerWidget" name="hruler" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-        <item>
-         <widget class="QWidget" name="hruler" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="chart">
         <item>
-         <widget class="QWidget" name="cinfo" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>20</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="talbotChart" native="true">
+         <widget class="ChartWidget" name="talbotChart" native="true">
           <property name="minimumSize">
            <size>
             <width>100</width>
@@ -99,17 +105,17 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="cruler" native="true">
+         <widget class="RulerWidget" name="cruler" native="true">
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>20</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>20</height>
+            <height>30</height>
            </size>
           </property>
          </widget>
@@ -125,7 +131,7 @@
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
         <item>
-         <widget class="QListWidget" name="experiments">
+         <widget class="ExperimentList" name="experiments">
           <property name="minimumSize">
            <size>
             <width>200</width>
@@ -142,6 +148,22 @@
             <height>30</height>
            </size>
           </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QPushButton" name="add_new_experiment">
+             <property name="text">
+              <string>Создать новый эксперимент</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="delete_selected_experiments">
+             <property name="text">
+              <string>Удалить выбранное</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
@@ -153,7 +175,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QCheckBox" name="is_reflectible_input">
+              <widget class="QCheckBox" name="reflectible_input">
                <property name="text">
                 <string>Отражение волн от бортиков</string>
                </property>
@@ -169,7 +191,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="sources_input">
+                <widget class="QSpinBox" name="n_sources_input">
                  <property name="minimum">
                   <number>1</number>
                  </property>
@@ -190,7 +212,17 @@
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="phase_input"/>
+                <widget class="QDoubleSpinBox" name="phase_input">
+                 <property name="suffix">
+                  <string> * 2PI (Радиан)</string>
+                 </property>
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -204,7 +236,10 @@
                 </widget>
                </item>
                <item>
-                <widget class="QDoubleSpinBox" name="wavelen_input">
+                <widget class="QDoubleSpinBox" name="wave_len_input">
+                 <property name="suffix">
+                  <string> см</string>
+                 </property>
                  <property name="maximum">
                   <double>99999.990000000005239</double>
                  </property>
@@ -225,7 +260,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="slope_input">
+                <widget class="QSpinBox" name="wave_slope_input">
                  <property name="value">
                   <number>1</number>
                  </property>
@@ -263,14 +298,14 @@
           <item>
            <widget class="QPushButton" name="drawButton">
             <property name="text">
-             <string>DRAW</string>
+             <string>Отрисовать</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="reportButton">
+           <widget class="QPushButton" name="safeButton">
             <property name="text">
-             <string>Сгенерировать отчёт</string>
+             <string>Сохранить</string>
             </property>
            </widget>
           </item>
@@ -287,8 +322,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1177</width>
-     <height>22</height>
+     <width>1318</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -336,6 +371,23 @@
    <extends>QWidget</extends>
    <header>talbotimagewidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ChartWidget</class>
+   <extends>QWidget</extends>
+   <header>chartwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RulerWidget</class>
+   <extends>QWidget</extends>
+   <header>rulerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ExperimentList</class>
+   <extends>QListWidget</extends>
+   <header>experimentlist.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
