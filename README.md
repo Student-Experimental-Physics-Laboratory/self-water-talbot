@@ -9,7 +9,7 @@ $ git clone git@github.com:Student-Experimental-Physics-Laboratory/self-water-ta
 ```
 
 ```
-$ cd self-water-talbot
+$ cd self-water-talbot/source
 ```
 
 ```
